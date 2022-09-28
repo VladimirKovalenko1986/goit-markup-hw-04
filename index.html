@@ -67,7 +67,9 @@
       <!-- Hero -->
       <section class="hero">
         <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
-        <button type="button" class="hero-btn btn">Замовити послугу</button>
+        <button type="button" class="hero-btn btn" data-modal-open>
+          Замовити послугу
+        </button>
       </section>
 
       <!-- Function -->
@@ -623,5 +625,15 @@
         </div>
       </div>
     </footer>
+
+    <!-- Modal -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="close-button" data-modal-close></button>
+      </div>
+    </div>
+
+    <!-- Java script -->
+    <script src="./js/modal.js"></script>
   </body>
 </html>

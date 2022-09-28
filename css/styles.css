@@ -51,6 +51,16 @@ ul {
   /* outline: 1px solid tomato; */
 }
 
+a {
+  transition: background-color 250ms var(--cubic-all),
+    border 250ms var(--cubic-all), box-shadow 250ms var(--cubic-all);
+}
+
+button {
+  transition: background-color 250ms var(--cubic-all),
+    box-shadow 250ms var(--cubic-all);
+}
+
 .title {
   text-align: center;
   margin-bottom: 50px;
@@ -592,15 +602,15 @@ ul {
 }
 
 .conteiner-pictures {
+  width: 100%;
   padding: 20px 24px;
   border: 1px solid var(--color-border-main);
   border-top: none;
 }
 
 .pictures-title {
-  max-width: 322px;
   margin-bottom: 4px;
-  border: 1px solid var(--color-hero-title);
+  max-width: 322px;
   border-top: none;
 
   color: var(--color-secondery-text);
@@ -714,4 +724,75 @@ ul {
 
 .footer-link-social svg {
   fill: var(--color-hero-title);
+}
+
+/* Modal */
+
+.backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-color: var(--color-bg-ocupation-text);
+}
+
+.backdrop.is-hidden .modal {
+  transform: scale(1.2) translate(-50%, -50%);
+}
+
+.modal {
+  position: absolute;
+  width: 528px;
+  height: 581px;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  background-color: var(--color-hero-title);
+
+  transform: scale(1) translate(-50%, -50%);
+  transition: transform 250ms var(--cubic-all);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+  background-color: var(--color-hero-title);
+}
+
+.close-button::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  display: block;
+
+  background-image: url("../images/icon-close-modal.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  transform: translate(-50%, -50%);
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
